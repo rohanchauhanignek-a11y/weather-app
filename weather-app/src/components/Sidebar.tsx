@@ -1,4 +1,4 @@
-import React from 'react'
+
 const element = ["Home","Search History","Settings"]
 const Sidebar = () => {
   return (

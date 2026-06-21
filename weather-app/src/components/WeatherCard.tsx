@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 const WeatherCard = () => {
   return (
-    <div className="bg-body flex justify-center h-[37.5%] w-full relative">
+    <div className="bg-body flex justify-center h-72 w-full relative">
         <img
           src="https://i.pinimg.com/1200x/2c/58/69/2c58698a46b218700ddcc27f09357447.jpg"
           className="h-full w-full object-cover rounded-xl"

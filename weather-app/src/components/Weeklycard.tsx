@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Weeklycard = ({item}:any) => {
     console.log(item);
