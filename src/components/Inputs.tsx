@@ -1,8 +1,32 @@
 const Inputs = ({ setflag, flag }: { setflag: React.Dispatch<React.SetStateAction<boolean>>; flag: boolean }) => {
   return (
-    <div className="bg-body flex justify-center p-2 border-none ">
-      <button onClick={() => setflag(!flag)}>Toggle</button>
-        <form className="w-1/2 rounded-lg  bg-[hsl(223,36%,35%)] border-none">
+    <div className="bg-body flex items-center justify-between gap-4 p-2 border-none">
+      <div className="flex justify-start gap-4">
+        <button
+        onClick={() => setflag(!flag)}
+        className="relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 shrink-0"
+        aria-label="Toggle sidebar"
+      >
+        <span
+          className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
+            flag ? "rotate-45 translate-y-2" : ""
+          }`}
+        />
+        <span
+          className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
+            flag ? "opacity-0" : "opacity-100"
+          }`}
+        />
+        <span
+          className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
+            flag ? "-rotate-45 -translate-y-2" : ""
+          }`}
+        />
+      </button>
+      </div>
+      <div></div>
+
+     <form className="w-1/2 rounded-lg  bg-[hsl(223,36%,35%)] border-none">
           <label
             htmlFor="search"
             className="block mb-2.5 text-sm font-medium text-heading sr-only "
@@ -43,8 +67,15 @@ const Inputs = ({ setflag, flag }: { setflag: React.Dispatch<React.SetStateActio
             </button>
           </div>
         </form>
-      </div>
-  )
-}
+        <label className="inline-flex items-center cursor-pointer text-white font-bold text-lg py-4">
+            <span className="select-none text-sm font-medium text-heading">Dark </span>
+            <input type="checkbox" value="" className="sr-only peer" />
+            <div className="relative mx-3 w-9 h-5 bg-body peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+            <span className="select-none text-sm font-medium text-heading">Light</span>
+          </label>
 
-export default Inputs
+    </div>
+  );
+};
+
+export default Inputs;
