@@ -1,7 +1,7 @@
-const Inputs = ({ setflag }: { setflag: React.Dispatch<React.SetStateAction<boolean>> }) => {
+const Inputs = ({ setflag, flag }: { setflag: React.Dispatch<React.SetStateAction<boolean>>; flag: boolean }) => {
   return (
     <div className="bg-body flex justify-center p-2 border-none ">
-      <button onClick={() => setflag(!setflag)}>Toggle</button>
+      <button onClick={() => setflag(!flag)}>Toggle</button>
         <form className="w-1/2 rounded-lg  bg-[hsl(223,36%,35%)] border-none">
           <label
             htmlFor="search"

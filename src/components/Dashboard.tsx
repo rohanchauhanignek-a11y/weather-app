@@ -13,7 +13,7 @@ const Dashboard = () => {
       </div>}
       <div className="bg-[hsl(222,45%,13%)] flex-1 p-4">
         {/* {o <button onClick={()=>setflag(!flag)}>Toggle</button>} */}
-      <Body setflag={setflag}/>
+      <Body setflag={setflag} flag={flag} />
       </div>
       
     </div>
