@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import Image from '../assets/b0eba49a-e35a-4c82-82f5-59feae77f4af.png'
 
-const element = [{item:"Home",path:"/home"}, {item:"Search History",path:"/history"}, {item:"Settings",path:"/setting"}]
+const element = [{item:"Home",path:"/"}, {item:"Search History",path:"/history"}, {item:"Settings",path:"/setting"}]
 
 const Sidebar = () => {
   const navigate = useNavigate();
