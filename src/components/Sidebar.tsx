@@ -17,8 +17,8 @@ const Sidebar = () => {
           })
         }
       </div>
-      <div className=' h-[62.5%] '>
-        <div className='h-[25%] bg-body flex justify-center text-white items-center text-2xl font-bold'>
+      <div className='  grid grid-cols-1 '>
+        <div className='h-[25%] bg-body flex justify-center text-white items-center text-2xl font-bold justify-items-center-safe'>
 
           <label className="inline-flex items-center cursor-pointer">
             <span className="select-none text-sm font-medium text-heading">Celsius </span>
@@ -28,7 +28,7 @@ const Sidebar = () => {
           </label>
 
         </div>
-        <div className='bg-body  flex justify-center items-center text-2xl font-bold pt-4 h-[75%]'>
+        <div className='bg-body  flex justify-center items-center text-2xl font-bold '>
           <img src={Image} alt="Weather" />
         </div>
       </div>

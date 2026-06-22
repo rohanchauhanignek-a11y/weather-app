@@ -2,7 +2,7 @@
 
 const CityCard = ({item}:any) => {
   return (
-    <div className=' border rounded-md flex justify-between items-center hover:scale-100 hover:bg-white/5 hover:shadow-lg cursor-pointer'>
+    <div className='max-h-20 border rounded-md flex  hover:scale-100 hover:bg-white/5 hover:shadow-lg cursor-pointer'>
       <div className='flex items-center'>
         <div>
             <img src={item.iconUrl}/>

@@ -1,7 +1,14 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
+import {  useSelector } from 'react-redux';
+
 const WeatherCard = () => {
+
+  const waetherDataRedux = useSelector((state:any) => state.weather.weatherData);
+  console.log(waetherDataRedux);
+  
   return (
     <div className="bg-body flex justify-center h-72 w-full relative">
         <img
@@ -19,7 +26,7 @@ const WeatherCard = () => {
               <div>
                 <div className=' font-bold text-white flex'>
                  
-                <h2>{"Ahmedabad"}</h2>
+                <h2>{waetherDataRedux?.name}</h2>
               </div>
               <div className=''>
                 <p className='text-xs text-gray-400'>{"Loaction"}</p>
@@ -30,16 +37,16 @@ const WeatherCard = () => {
           </div>
           <div className=' h-[75%] flex justify-center items-center'>
             <div className='flex justify-center w-1/4 h-1/2 items-center'>
-              <img src='https://freepngimg.com/thumb/weather/76818-forecasting-material-rain-shower-weather-icon.png' className='shadow-black'/>
+              <img src={`https://openweathermap.org/img/wn/${waetherDataRedux?.weather[0]?.icon}@2x.png`} className='shadow-black w-full flex items-start'/>
             </div>
           </div>
           </div>
 
           <div className="w-1/2 h-full flex items-center justify-center ">
           <div className='  flex flex-col gap-2 text-white'>
-            <div className='text-6xl font-semibold'>{"32°C"}</div>
-            <div><p className='text-3xl'>Preaty Cloudy</p></div>
-            <div><p>{"Feels like 32°C"}</p></div>
+            <div className='text-6xl font-semibold'>{waetherDataRedux?.main.temp}°C</div>
+            <div><p className='text-3xl'>{waetherDataRedux?.weather[0].description}</p></div>
+            <div><p>Feels like {waetherDataRedux?.main.feels_like}°C</p></div>
           </div>
           
           </div>
