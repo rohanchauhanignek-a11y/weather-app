@@ -1,4 +1,4 @@
-import OverviewCard from "./OverviewCard";
+import OverviewCard from "../OverviewCard";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
 import { FaTemperatureHalf } from "react-icons/fa6";
 import { useSelector,  } from "react-redux";
@@ -27,7 +27,7 @@ const WeatherOverView = () => {
   ];
 
   return (
-    <div className="bg-body flex justify-around">
+    <div className="bg-body flex justify-around ">
       {weatherHighlights.map((item) => (
         <OverviewCard item={item} key={item.title} />  // ✅ added key
       ))}

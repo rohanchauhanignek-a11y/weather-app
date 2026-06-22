@@ -1,17 +1,20 @@
-
-const element = ["Home", "Search History", "Settings"]
+import { useNavigate } from 'react-router-dom'
 import Image from '../assets/b0eba49a-e35a-4c82-82f5-59feae77f4af.png'
+
+const element = [{item:"Home",path:"/home"}, {item:"Search History",path:"/history"}, {item:"Settings",path:"/setting"}]
+
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <div className='h-full'>
 
       <div className='text-white font-bold flex justify-evenly pt-8 h-[12.5%] '>Weatherly</div>
       <div className='h-1/4'>
         {
-          element.map((item) => {
+          element.map((item,i) => {
             return (
-              <div className='flex justify-evenly text-white font-bold text-lg py-4 cursor-pointer hover:bg-[hsl(222,45%,13%)]' key={item}>
-                {item}
+              <div className='flex justify-evenly text-white font-bold text-lg py-4 cursor-pointer hover:bg-[hsl(222,45%,13%)]' key={i} onClick={()=>navigate(item?.path)}>
+                {item.item}
               </div>
             )
           })

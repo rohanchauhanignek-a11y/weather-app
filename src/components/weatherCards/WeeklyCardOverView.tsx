@@ -1,5 +1,5 @@
-import Weeklycard from "./Weeklycard";
-import { getHourlyForecast } from "../servicices/HourlyData";
+import Weeklycard from "../weatherCards/Weeklycard";
+import { getHourlyForecast } from "../../servicices/HourlyData";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 

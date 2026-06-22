@@ -7,13 +7,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebounce } from "../hooks/useDebounce";
 
-const Inputs = ({
-  setflag,
-  flag,
-}: {
-  setflag: React.Dispatch<React.SetStateAction<boolean>>;
-  flag: boolean;
-}) => {
+const Inputs = () => {
   const { register, handleSubmit, setValue } = useForm();
   const city = useSelector((store: any) => store.weather.city);
   const dispatch = useDispatch();
@@ -22,7 +16,7 @@ const Inputs = ({
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSugg, setShowSugg] = useState(false);
 
-  const debouncedSearch = useDebounce(searchTerm, 500);
+  const debouncedSearch = useDebounce(searchTerm, 300);
 
   const { data: weatherData } = useQuery({
     queryKey: ["weather", city],
@@ -60,32 +54,11 @@ const Inputs = ({
   }
 
   return (
-    <div className="bg-body flex items-center justify-between gap-4 p-2 border-none">
-      <div className="flex justify-start gap-4">
-        <button
-          onClick={() => setflag(!flag)}
-          className="relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 shrink-0"
-          aria-label="Toggle sidebar"
-        >
-          <span
-            className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
-              flag ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
-              flag ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-white rounded transition-all duration-300 ${
-              flag ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
-        </button>
-      </div>
+    <div className="bg-body flex items-center justify-center gap-4 p-2 border-none">
+      
 
-      <div></div>
+      
+     
 
       <form
         className="w-1/2 rounded-lg bg-[hsl(223,36%,35%)] border-none relative"
@@ -164,8 +137,7 @@ const Inputs = ({
           </ul>
         )}
       </form>
-
-      <label className="inline-flex items-center cursor-pointer text-white font-bold text-lg py-4">
+       <label className="inline-flex items-center cursor-pointer text-white font-bold text-lg py-4">
         <span className="select-none text-sm font-medium text-heading">
           Dark
         </span>
@@ -178,6 +150,7 @@ const Inputs = ({
           Light
         </span>
       </label>
+
     </div>
   );
 };

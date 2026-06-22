@@ -2,7 +2,7 @@ export const getCitySuggestions = async (query: string) => {
   if (!query.trim()) return [];
 
   const response = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${query}&featuretype=city&format=json&limit=10`,
+    `https://nominatim.openstreetmap.org/search?q=${query}&featuretype=city&format=json&limit=5`,
     {
       headers: {
         "Accept": "application/json",

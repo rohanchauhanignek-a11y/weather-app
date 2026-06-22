@@ -1,10 +1,31 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Dashboard from './components/Dashboard'
-
+import Layout from './layout/Layout'
+import Home from './components/pages/Home'
+import HistoryPage from './components/pages/HistoryPage'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        path:'/home',
+        element: <Home />,
+      },
+      {
+        path:"/history",
+        element:<HistoryPage/>
+      }
+      // {
+      //   path: "weather",
+      //   element: <Weather />,
+      // },
+      // {
+      //   path: "history",
+      //   element: <History />,
+      // },
+    ],
+
   },
 ])
 
