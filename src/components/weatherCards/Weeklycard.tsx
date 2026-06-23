@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
+import { feranHitCovter } from "../utils/feranhitCovter";
 const Weeklycard = ({ item }: any) => {
   const hourlyIcon = item.weather[0].icon;
-
+  const IsCelicuse = useSelector((state:any)=>state.weather.unit)
   return (
     <div className="w-1/6 text-white hover:scale-105 hover:bg-white/20 hover:shadow-lg cursor-pointer rounded-xl">
       <div className="flex flex-col items-center justify-center">
@@ -12,7 +14,7 @@ const Weeklycard = ({ item }: any) => {
           className="w-16 h-16"
         />
 
-        <p>{Math.round(item?.main?.temp)}°C</p>
+        <p>{IsCelicuse?`${Math.round(item?.main?.temp)}°C`:feranHitCovter(Math.round(item?.main?.temp))}</p>
       </div>
     </div>
   );

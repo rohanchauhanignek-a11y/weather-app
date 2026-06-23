@@ -1,6 +1,8 @@
 
-
+import { useSelector } from "react-redux"
+import { feranHitCovter } from "../utils/feranhitCovter"
 const CityCard = ({item}:any) => {
+  const IsCelciase = useSelector((state:any)=>state.weather.unit)
   return (
     <div className='max-h-20 border rounded-md flex justify-between  hover:scale-100 hover:bg-white/5 hover:shadow-lg cursor-pointer' key={item?.id}>
       <div className='flex items-center '>
@@ -13,7 +15,7 @@ const CityCard = ({item}:any) => {
         </div>
       </div>
       <div className='flex justify-center '>
-        <div className='p-2'><p>{`${item?.main?.temp}°C`}</p></div>
+        <div className='p-2'><p>{IsCelciase?`${item?.main?.temp}°C`:feranHitCovter(item?.main?.temp)}</p></div>
         <div className='p-2'><p>🤍</p></div>
       </div>
     </div>

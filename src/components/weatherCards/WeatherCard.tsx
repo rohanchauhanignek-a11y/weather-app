@@ -1,12 +1,13 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-
+import { feranHitCovter } from "../utils/feranhitCovter";
 import {  useSelector } from 'react-redux';
 
 const WeatherCard = () => {
 
   const waetherDataRedux = useSelector((state:any) => state.weather.weatherData);
+  const IsCelicuse = useSelector((state:any)=>state.weather.unit)
   console.log(waetherDataRedux);
   
   return (
@@ -44,9 +45,9 @@ const WeatherCard = () => {
 
           <div className="w-1/2 h-full flex items-center justify-center ">
           <div className='  flex flex-col gap-2 text-white'>
-            <div className='text-6xl font-semibold'>{waetherDataRedux?.main.temp}°C</div>
+            <div className='text-6xl font-semibold'>{IsCelicuse?`${waetherDataRedux?.main.temp}°C`:feranHitCovter(waetherDataRedux?.main.temp)}</div>
             <div><p className='text-3xl'>{waetherDataRedux?.weather[0].description}</p></div>
-            <div><p>Feels like {waetherDataRedux?.main.feels_like}°C</p></div>
+            <div><p>Feels like {IsCelicuse?`${waetherDataRedux?.main.feels_like}°C`:feranHitCovter(waetherDataRedux?.main.feels_like)}</p></div>
           </div>
           
           </div>

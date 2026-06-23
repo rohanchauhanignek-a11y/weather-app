@@ -9,6 +9,7 @@ const weatherSlice = createSlice({
       const item = localStorage.getItem("history");
       return item ? JSON.parse(item) : [];
     })(),
+    unit:true
   },
   reducers: {
     setWeatherData(state, action) {
@@ -27,8 +28,12 @@ const weatherSlice = createSlice({
       state.history = [];
       localStorage.removeItem("history");
     },
+    setUnit(state){
+      state.unit= (!state.unit)
+    }
+
   },
 });
 
-export const { setWeatherData,setCity,clearAll } = weatherSlice.actions;
+export const { setWeatherData,setCity,clearAll,setUnit } = weatherSlice.actions;
 export default weatherSlice.reducer;

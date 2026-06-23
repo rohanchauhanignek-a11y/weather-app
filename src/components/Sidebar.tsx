@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import Image from '../assets/b0eba49a-e35a-4c82-82f5-59feae77f4af.png'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { setUnit } from '../redux/weatherSlice'
 const element = [{item:"Home",path:"/"}, {item:"Search History",path:"/history"}, {item:"Settings",path:"/setting"}]
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const IsChecked = useSelector((state:any)=> state.weather.unit)
   return (
     <div className='h-full'>
 
@@ -25,7 +28,7 @@ const Sidebar = () => {
 
           <label className="inline-flex items-center cursor-pointer">
             <span className="select-none text-sm font-medium text-heading">Celsius </span>
-            <input type="checkbox" value="" className="sr-only peer" />
+            <input type="checkbox" checked={!IsChecked} className="sr-only peer" onClick={()=>dispatch(setUnit())}/>
             <div className="relative mx-3 w-9 h-5 bg-body peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
             <span className="select-none text-sm font-medium text-heading">Fahrenheit</span>
           </label>
