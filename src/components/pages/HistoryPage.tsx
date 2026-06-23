@@ -2,7 +2,7 @@ import CityTable from "../cities/CityTable"
 const HistoryPage = () => {
   return (
     <div>
-      <CityTable/>
+      <CityTable value={0}/>
     </div>
   )
 }

@@ -11,7 +11,7 @@ const Inputs = () => {
   const { register, handleSubmit, setValue } = useForm();
   const city = useSelector((store: any) => store.weather.city);
   const dispatch = useDispatch();
-
+  
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSugg, setShowSugg] = useState(false);
@@ -61,7 +61,7 @@ const Inputs = () => {
      
 
       <form
-        className="w-1/2 rounded-lg bg-[hsl(223,36%,35%)] border-none relative"
+        className={`w-1/2 rounded-lg bg-[hsl(223,36%,35%)] border-none relative`}
         onSubmit={handleSubmit(onSubmit)}
       >
         <label
@@ -72,7 +72,7 @@ const Inputs = () => {
         </label>
 
         <div className="relative">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <div className="absolute inset-y-0 flex items-center ps-3 pointer-events-none">
             <svg
               className="w-4 h-4 text-white"
               aria-hidden="true"
@@ -108,7 +108,7 @@ const Inputs = () => {
 
           <button
             type="submit"
-            className="absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none"
+            className="absolute  bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none"
           >
             Search
           </button>

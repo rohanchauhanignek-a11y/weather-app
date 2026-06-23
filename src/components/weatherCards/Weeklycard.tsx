@@ -4,7 +4,7 @@ const Weeklycard = ({ item }: any) => {
   const hourlyIcon = item.weather[0].icon;
   const IsCelicuse = useSelector((state:any)=>state.weather.unit)
   return (
-    <div className="w-1/6 text-white hover:scale-105 hover:bg-white/20 hover:shadow-lg cursor-pointer rounded-xl">
+    <div className="w-1/8 text-white hover:scale-105 hover:bg-white/20 hover:shadow-lg cursor-pointer rounded-xl">
       <div className="flex flex-col items-center justify-center">
         <p>{item.dt_txt.split(" ")[1].slice(0, 5)}</p>
 

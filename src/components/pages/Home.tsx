@@ -12,7 +12,7 @@ const Home = () => {
       <WeatherCard/> 
       <WeatherOverView/>
       <WeeklyCardOverView/>
-      <CityTable/>
+      <CityTable value={5}/>
     </div>
   );
 }

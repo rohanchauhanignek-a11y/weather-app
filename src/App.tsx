@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Home from './components/pages/Home'
 import HistoryPage from './components/pages/HistoryPage'
+import SettingPage from './components/pages/SettingPage'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,11 +16,11 @@ const router = createBrowserRouter([
       {
         path:"/history",
         element:<HistoryPage/>
-      }
-      // {
-      //   path: "weather",
-      //   element: <Weather />,
-      // },
+      },
+      {
+        path: "/setting",
+        element: <SettingPage />,
+      },
       // {
       //   path: "history",
       //   element: <History />,

@@ -18,7 +18,7 @@ const weatherSlice = createSlice({
       const cityName = action.payload.name;
       state.history = state.history.filter((item:any) => item.name !== cityName);
       state.history.unshift(action.payload);
-      state.history = state.history.slice(0, 5);
+      
       localStorage.setItem("history", JSON.stringify(state.history));
     },
     setCity(state, action) {
